@@ -1,0 +1,32 @@
+{
+  "name": "file-hive-api",
+  "version": "1.0.0",
+  "description": "This is a sophisticated file management app. In here you can create, upload, update, edit, delete, comment, sharing your files easily",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nasimhelal-cell/file-hive-api"
+  },
+  "keywords": [
+    "file_manager",
+    "file-hive"
+  ],
+  "author": "nasim helal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nasimhelal-cell/file-hive-api/issues"
+  },
+  "homepage": "https://github.com/nasimhelal-cell/file-hive-api#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.4"
+  }
+}
