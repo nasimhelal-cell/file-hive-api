@@ -2,7 +2,7 @@
   "name": "file-hive-api",
   "version": "1.0.0",
   "description": "This is a sophisticated file management app. In here you can create, upload, update, edit, delete, comment, sharing your files easily",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js"
