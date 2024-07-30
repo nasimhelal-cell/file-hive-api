@@ -1,7 +1,12 @@
-import express from 'express';
+const http = require("node:http");
+const dotenv = require("dotenv");
+dotenv.config();
 
-const app = express();
+const { app } = require("./app");
+const { connectDB } = require("./db");
 
-app.listen(4000, (req, res) => {
-    console.log('app is listening')
-})
+
+const server = http.createServer(app);
+
+connectDB(server)
+
