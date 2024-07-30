@@ -9,7 +9,7 @@ async function connectDB(server) {
     console.log("Database is connected !!! ✅");    
     
     server.listen(port, () => {
-      console.log("Server is listening at port: " + port);
+      console.log("Server is listening at port: " + port+` | Base url is - http://localhost:${port}`);
     });
   } catch (error) {
     console.log("Failed to connect with database! ❌");

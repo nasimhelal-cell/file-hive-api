@@ -23,8 +23,11 @@
   "homepage": "https://github.com/nasimhelal-cell/file-hive-api#readme",
   "dependencies": {
     "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "http-status-codes": "^2.3.0",
     "mongoose": "^8.5.1",
     "morgan": "^1.10.0",
     "nodemon": "^3.1.4",
