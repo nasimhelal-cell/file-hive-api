@@ -3,6 +3,4 @@ const router = require("../routes");
 
 defaultRouter.use("/api", router);
 
-module.exports = {
-  defaultRouter,
-};
+module.exports = defaultRouter;
