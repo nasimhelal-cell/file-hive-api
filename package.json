@@ -4,7 +4,7 @@
   "description": "This is a sophisticated file management app. In here you can create, upload, update, edit, delete, comment, sharing your files easily",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "cross-env NODE_ENV=test jest --testTimeout=5000",
     "start": "nodemon index.js"
   },
   "repository": {
@@ -30,8 +30,13 @@
     "http-status-codes": "^2.3.0",
     "mongoose": "^8.5.1",
     "morgan": "^1.10.0",
-    "nodemon": "^3.1.4",
     "swagger-ui-express": "^5.0.1",
     "yamljs": "^0.3.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.4",
+    "supertest": "^7.0.0"
   }
 }
