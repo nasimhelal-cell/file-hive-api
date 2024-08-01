@@ -696,7 +696,7 @@ components:
     folders_create_body:
       required:
         - name
-        - parentID
+        - path
       type: object
       properties:
         name:
@@ -704,6 +704,9 @@ components:
           example: foldername
         parentID:
           $ref: "#/components/schemas/ID"
+        path:
+          type: string
+          example: /
     inline_response_201_1:
       type: object
       properties:
