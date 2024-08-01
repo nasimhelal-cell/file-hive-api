@@ -18,7 +18,7 @@ function defaultError(error, _req, res, _next) {
     message: error.message,
   };
 
-  res.status(error.statusCode).json(errorResponse);
+  res.status(error.code).json(errorResponse);
 }
 
 module.exports = { defaultError };
