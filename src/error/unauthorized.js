@@ -1,8 +1,8 @@
 const AppError = require("./AppError");
 const { StatusCodes } = require("http-status-codes");
 
-function unauthorized() {
-  throw new AppError("User is not authorized", StatusCodes.UNAUTHORIZED);
+function unauthorized(error = "User is not authorized") {
+  throw new AppError(error, StatusCodes.UNAUTHORIZED);
 }
 
 module.exports = unauthorized;
