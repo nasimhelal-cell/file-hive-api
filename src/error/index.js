@@ -4,12 +4,10 @@ const forbidden = require("./forbidden");
 const notFound = require("./notFound");
 const unauthorized = require("./unauthorized");
 
-const error = {
+module.exports = {
   defaultError,
   notFound,
   badRequest,
   unauthorized,
   forbidden,
 };
-
-module.exports = error;

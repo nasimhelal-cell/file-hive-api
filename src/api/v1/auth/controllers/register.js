@@ -1,15 +1,25 @@
-const { badRequest } = require("../../../../error");
-const createUser = require("../../../../lib/user/createUser");
-const { User } = require("../../../../models");
-const { isValidEmail, catchAsync } = require("../../../../utils");
+const { StatusCodes } = require("http-status-codes");
+const authServices = require("../../../../lib/auth");
+const { catchAsync } = require("../../../../utils");
 
-const register = catchAsync((req, res, next) => {
-  const { name, email, password, avatar, role } = req.body;
-  if (!name || !email || !password) {
-    badRequest("One or more credentials are missing");
-  }
+const register = catchAsync(async (req, res) => {
+  const { username, email, password, avatar, role } = req.body;
 
-  const user = createUser({ name, email, password, avatar, role });
+  let user = await authServices.register({
+    username,
+    email,
+    password,
+    avatar,
+    role,
+  });
+
+  const response = {
+    code: StatusCodes.CREATED,
+    message: "User registered successfully",
+    data: user,
+  };
+
+  res.status(StatusCodes.CREATED).json(response);
 });
 
 module.exports = register;

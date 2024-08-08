@@ -1,4 +1,4 @@
-const { default: userDefault } = require("./userDefault");
+const userDefault = require("./userDefault");
 
 module.exports = {
   userDefault,

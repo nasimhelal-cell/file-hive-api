@@ -1,55 +1,99 @@
-const createUser = require("../../../src/lib/user/createUser");
+const { userDefault } = require("../../../src/config");
+const { createUser } = require("../../../src/lib/user");
 const { User } = require("../../../src/models");
 
-jest.mock("../../../src/models/User", () => {
-  const User = jest.fn().mockImplementation(() => {
-    return {
-      save: jest.fn().mockResolvedValue({
-        _id: "507f191e810c19729de860ea",
-        name: "John Doe",
-        email: "john@example.com",
-        password: "hashed-password",
-        avatar: "avatar.png",
-        role: "viewer",
-      }),
-    };
-  });
-  return User;
-});
-
-jest.mock("../../../src/config", () => ({
-  userDefault: { role: "viewer" },
+jest.mock("../../../src/models", () => ({
+  User: jest.fn().mockImplementation(() => ({
+    save: jest.fn(),
+  })),
 }));
 
 describe("createUser", () => {
-  it("should create and save a new user to database with passing role", async () => {
-    const userData = {
-      name: "John Doe",
-      email: "john@example.com",
-      password: "hashed-password",
-      avatar: "avatar.png",
-      role: "viewer",
-    };
-    const newUser = await createUser(userData);
-
-    expect(User).toHaveBeenCalledWith(userData);
-    expect(newUser).toEqual(expect.objectContaining(userData));
+  afterEach(() => {
+    jest.clearAllMocks();
   });
 
-  it("should create and save new user to database with default role", async () => {
-    const userData = {
-      name: "John Doe",
-      email: "john@example.com",
+  it("should create and save an user to database", async () => {
+    const mockUser = {
+      username: "name",
+      email: "email@email.com",
       password: "hashed-password",
-      avatar: "avatar.png",
+      avatar: "url",
+      role: "viewer",
+      save: jest.fn().mockResolvedValue("savedUser"),
     };
-    const newUser = await createUser(userData);
 
-    expect(User).toHaveBeenCalledWith({
-      ...userData,
+    User.mockImplementation(() => mockUser);
+
+    const result = await createUser({
+      username: "name",
+      email: "email@email.com",
+      password: "hashed-password",
+      avatar: "url",
       role: "viewer",
     });
 
-    expect(newUser.role).toBe("viewer");
+    expect(User).toHaveBeenCalledWith({
+      username: "name",
+      email: "email@email.com",
+      password: "hashed-password",
+      avatar: "url",
+      role: "viewer",
+    });
+    expect(mockUser.save).toHaveBeenCalled();
+    expect(result).toBe("savedUser");
+  });
+
+  it("should create and save new user with default avatar and role it not provided", async () => {
+    const mockUser = {
+      username: "name",
+      email: "email@email.com",
+      password: "hashed-password",
+      avatar: "url",
+      role: "viewer",
+      save: jest.fn().mockResolvedValue("savedUser"),
+    };
+
+    User.mockImplementation(() => mockUser);
+
+    const result = await createUser({
+      username: "name",
+      email: "email@email.com",
+      password: "hashed-password",
+    });
+
+    expect(User).toHaveBeenCalledWith({
+      username: "name",
+      email: "email@email.com",
+      password: "hashed-password",
+      avatar: userDefault.avatar,
+      role: userDefault.role,
+    });
+    expect(mockUser.save).toHaveBeenCalled();
+    expect(result).toBe("savedUser");
+  });
+
+  it("should handle errors thrown by the save method", async () => {
+    const mockUser = {
+      username: "name",
+      email: "email@email.com",
+      password: "hashed-password",
+      avatar: "url",
+      role: "viewer",
+      save: jest.fn().mockRejectedValue(new Error("Save error")),
+    };
+
+    User.mockImplementation(() => mockUser);
+
+    await expect(
+      createUser({
+        username: "name",
+        email: "email@email.com",
+        password: "hashed-password",
+        avatar: "url",
+        role: "viewer",
+      })
+    ).rejects.toThrow("Save error");
+    expect(mockUser.save).toHaveBeenCalled();
   });
 });

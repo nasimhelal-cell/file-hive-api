@@ -463,7 +463,7 @@ components:
     User:
       type: object
       properties:
-        name:
+        username:
           type: string
           example: Nasim Helal
         email:
@@ -1096,7 +1096,7 @@ components:
               - password
             type: object
             properties:
-              name:
+              username:
                 type: string
                 example: Nasim Helal
               email:

@@ -2,13 +2,14 @@ const { userDefault } = require("../../config");
 const { User } = require("../../models");
 
 const createUser = ({
-  name,
+  username,
   email,
   password,
-  avatar,
+  avatar = userDefault.avatar,
   role = userDefault.role,
 }) => {
-  const user = new User({ name, email, password, avatar, role });
+  const user = new User({ username, email, password, avatar, role });
+
   return user.save();
 };
 
