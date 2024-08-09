@@ -7,7 +7,7 @@ jest.mock("../../src/error/AppError");
 describe("DBValidationError", () => {
   it("should return an DBValidationError with correct message and status code", () => {
     const mockError = {
-      error: {
+      errors: {
         name: { message: "Name is required" },
         email: { message: "Email is not valid" },
       },
