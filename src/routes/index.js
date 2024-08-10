@@ -2,7 +2,8 @@ const router = require("express").Router();
 const { controllers: authControllers } = require("../api/v1/auth");
 const { controllers: folderControllers } = require("../api/v1/folder");
 const { controllers: fileControllers } = require("../api/v1/file");
-const middleware = require("../middlewares/auth");
+const { authenticate } = require("../middlewares");
+
 // auth
 router.route("/v1/auth/register").post(authControllers.register);
 router.route("/v1/auth/login").post(authControllers.login);

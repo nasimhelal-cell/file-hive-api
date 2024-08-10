@@ -5,7 +5,6 @@ const userServices = require("../lib/user");
 
 const authenticate = catchAsync(async (req, _res, next) => {
   const token = req.headers?.authorization?.split(" ").at(1);
-
   const decodedUser = decodeToken(token);
 
   const user = await userServices.findUser({ email: decodedUser?.email });

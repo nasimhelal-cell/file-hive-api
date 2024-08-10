@@ -90,6 +90,8 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/inline_response_500"
+      security:
+        - BearerAuth: []
   /v1/folders/create:
     post:
       tags:

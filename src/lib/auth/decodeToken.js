@@ -6,7 +6,7 @@ const decodeToken = (token) => {
   try {
     return jwt.verify(token, secret);
   } catch (err) {
-    return badRequest("Not a valid token");
+    return badRequest("Not a valid token.");
   }
 };
 module.exports = decodeToken;

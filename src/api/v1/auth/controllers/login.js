@@ -10,9 +10,7 @@ const login = catchAsync(async (req, res) => {
   const response = {
     code: StatusCodes.OK,
     message: "Login successful",
-    data: {
-      token: `Bearer ${token}`,
-    },
+    data: { token },
   };
 
   res.status(StatusCodes.OK).json(response);
