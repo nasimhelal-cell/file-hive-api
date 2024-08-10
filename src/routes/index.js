@@ -2,11 +2,11 @@ const router = require("express").Router();
 const { controllers: authControllers } = require("../api/v1/auth");
 const { controllers: folderControllers } = require("../api/v1/folder");
 const { controllers: fileControllers } = require("../api/v1/file");
-
+const middleware = require("../middlewares/auth");
 // auth
 router.route("/v1/auth/register").post(authControllers.register);
 router.route("/v1/auth/login").post(authControllers.login);
-router.route("/v1/auth/logout").post(authControllers.logout);
+router.route("/v1/auth/logout").post(authenticate, authControllers.logout);
 
 // folder
 router.route("/v1/folders/create").post(folderControllers.create);
