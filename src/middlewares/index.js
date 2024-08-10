@@ -1,9 +1,7 @@
-function loggedInUser(req, res, next) {
-  req.user = {
-    id: "nasim",
-    email: "nasimhelal123@gmail.com",
-  };
-  next();
-}
+const authenticate = require("./authenticate");
+const authorize = require("./authorize");
 
-module.exports = loggedInUser;
+module.exports = {
+  authenticate,
+  authorize,
+};

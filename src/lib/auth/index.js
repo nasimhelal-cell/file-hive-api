@@ -1,3 +1,4 @@
+const decodeToken = require("./decodeToken");
 const encryptPassword = require("./encryptPassword");
 const generateToken = require("./generateToken");
 const isVerifiedPassword = require("./isVerifiedPassword");
@@ -10,4 +11,5 @@ module.exports = {
   register,
   generateToken,
   login,
+  decodeToken,
 };

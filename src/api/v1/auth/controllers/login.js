@@ -11,7 +11,7 @@ const login = catchAsync(async (req, res) => {
     code: StatusCodes.OK,
     message: "Login successful",
     data: {
-      token,
+      token: `Bearer ${token}`,
     },
   };
 

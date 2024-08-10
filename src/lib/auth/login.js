@@ -1,10 +1,10 @@
 const { notFound, badRequest } = require("../../error");
-const { findUser } = require("../user");
+const userServices = require("../user");
 const generateToken = require("./generateToken");
 const isVerifiedPassword = require("./isVerifiedPassword");
 
 const login = async ({ email, password }) => {
-  const user = await findUser({ email });
+  const user = await userServices.findUser({ email });
 
   if (!user) return notFound("You are not registered. Please register first.");
 
