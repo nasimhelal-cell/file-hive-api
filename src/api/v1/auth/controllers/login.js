@@ -1,6 +1,6 @@
 const { StatusCodes } = require("http-status-codes");
-const { catchAsync } = require("../../../../utils");
-const authServices = require("../../../../lib/auth");
+const { catchAsync } = require("@/utils");
+const authServices = require("@/lib/auth");
 
 const login = catchAsync(async (req, res) => {
   const { email, password } = req.body;

@@ -1,4 +1,4 @@
-const { forbidden } = require("../error");
+const { forbidden } = require("@/error");
 
 const authorize =
   (roles = ["admin"]) =>

@@ -1,8 +1,8 @@
 const router = require("express").Router();
-const { controllers: authControllers } = require("../api/v1/auth");
-const { controllers: folderControllers } = require("../api/v1/folder");
-const { controllers: fileControllers } = require("../api/v1/file");
-const { authenticate } = require("../middlewares");
+const { controllers: authControllers } = require("@/api/v1/auth");
+const { controllers: folderControllers } = require("@/api/v1/folder");
+const { controllers: fileControllers } = require("@/api/v1/file");
+const { authenticate } = require("@/middlewares");
 
 // auth
 router.route("/v1/auth/register").post(authControllers.register);

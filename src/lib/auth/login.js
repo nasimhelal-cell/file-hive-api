@@ -1,4 +1,4 @@
-const { notFound, badRequest } = require("../../error");
+const { notFound, badRequest } = require("@/error");
 const userServices = require("../user");
 const generateToken = require("./generateToken");
 const isVerifiedPassword = require("./isVerifiedPassword");
