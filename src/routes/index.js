@@ -10,7 +10,7 @@ router.route("/v1/auth/login").post(authControllers.login);
 router.route("/v1/auth/logout").post(authenticate, authControllers.logout);
 
 // folder
-router.route("/v1/folders/create").post(folderControllers.create);
+router.route("/v1/folders/create").post(authenticate, folderControllers.create);
 router.route("/v1/folders/update/:folderID").patch(folderControllers.update);
 router
   .route("/v1/folders/delete/:folderID")

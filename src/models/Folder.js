@@ -8,7 +8,7 @@ const folderSchema = new Schema({
     ref: "User",
     required: [true, "userID is required"],
   },
-  parentId: {
+  parentID: {
     type: Schema.Types.ObjectId,
     ref: "Folder",
     default: null,
