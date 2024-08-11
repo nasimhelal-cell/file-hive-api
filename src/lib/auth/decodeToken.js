@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const { badRequest } = require("../../error");
+const { badRequest } = require("@/error");
 
 const decodeToken = (token) => {
   const secret = process.env.JWT_SECRET;

@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const { connectDB } = require("../../src/db");
+const { connectDB } = require("@/db");
 
 jest.mock("mongoose", () => ({
   connect: jest.fn(),

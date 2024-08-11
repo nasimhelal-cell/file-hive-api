@@ -1,4 +1,4 @@
-const { badRequest } = require("../../error");
+const { badRequest } = require("@/error");
 const { createUser, findUser } = require("../user");
 const encryptPassword = require("./encryptPassword");
 

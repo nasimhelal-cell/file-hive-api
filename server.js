@@ -1,4 +1,6 @@
 require("dotenv").config();
+require("module-alias/register");
+
 const http = require("node:http");
 
 const { app } = require("./src/app");

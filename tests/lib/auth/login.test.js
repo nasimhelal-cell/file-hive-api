@@ -1,8 +1,8 @@
-const { notFound, badRequest } = require("../../../src/error");
-const generateToken = require("../../../src/lib/auth/generateToken");
-const isVerifiedPassword = require("../../../src/lib/auth/isVerifiedPassword");
-const authServices = require("../../../src/lib/auth");
-const { findUser } = require("../../../src/lib/user");
+const { notFound, badRequest } = require("@/error");
+const generateToken = require("@/lib/auth/generateToken");
+const isVerifiedPassword = require("@/lib/auth/isVerifiedPassword");
+const authServices = require("@/lib/auth");
+const { findUser } = require("@/lib/user");
 
 jest.mock("../../../src/lib/user");
 jest.mock("../../../src/error");

@@ -1,7 +1,7 @@
-const { forbidden } = require("../error");
-const { decodeToken } = require("../lib/auth");
-const { catchAsync } = require("../utils");
-const userServices = require("../lib/user");
+const { forbidden } = require("@/error");
+const { decodeToken } = require("@/lib/auth");
+const { catchAsync } = require("@/utils");
+const userServices = require("@/lib/user");
 
 const authenticate = catchAsync(async (req, _res, next) => {
   const token = req.headers?.authorization?.split(" ").at(1);

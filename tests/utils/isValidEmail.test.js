@@ -1,4 +1,4 @@
-const { isValidEmail } = require("../../src/utils");
+const { isValidEmail } = require("@/utils");
 
 describe("isValidEmail", () => {
   it("should return true for valid email addresses", () => {

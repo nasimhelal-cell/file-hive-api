@@ -1,5 +1,5 @@
-const { userDefault } = require("../../config");
-const { User } = require("../../models");
+const { userDefault } = require("@/config");
+const { User } = require("@/models");
 
 const createUser = ({
   username,
