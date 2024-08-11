@@ -1,7 +1,7 @@
-const { badRequest } = require("../../../src/error");
-const encryptPassword = require("../../../src/lib/auth/encryptPassword");
-const register = require("../../../src/lib/auth/register");
-const { findUser, createUser } = require("../../../src/lib/user");
+const { badRequest } = require("@/error");
+const encryptPassword = require("@/lib/auth/encryptPassword");
+const register = require("@/lib/auth/register");
+const { findUser, createUser } = require("@/lib/user");
 
 jest.mock("../../../src/lib/auth/encryptPassword");
 jest.mock("../../../src/error");

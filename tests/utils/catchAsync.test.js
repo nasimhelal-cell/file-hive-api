@@ -1,4 +1,4 @@
-const { catchAsync } = require("../../src/utils");
+const { catchAsync } = require("@/utils");
 
 describe("catchAsync", () => {
   it("should call the provided function with req, res, and next", async () => {

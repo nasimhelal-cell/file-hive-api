@@ -1,5 +1,5 @@
 const bcrypt = require("bcrypt");
-const { encryptPassword } = require("../../../src/lib/auth");
+const { encryptPassword } = require("@/lib/auth");
 
 jest.mock("bcrypt");
 

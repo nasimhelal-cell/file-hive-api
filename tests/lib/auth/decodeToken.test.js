@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
-const { badRequest } = require("../../../src/error");
-const { decodeToken } = require("../../../src/lib/auth");
+const { badRequest } = require("@/error");
+const { decodeToken } = require("@/lib/auth");
 
 jest.mock("jsonwebtoken", () => ({
   verify: jest.fn(),

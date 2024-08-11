@@ -1,6 +1,6 @@
-const { userDefault } = require("../../../src/config");
-const { createUser } = require("../../../src/lib/user");
-const { User } = require("../../../src/models");
+const { userDefault } = require("@/config");
+const { createUser } = require("@/lib/user");
+const { User } = require("@/models");
 
 jest.mock("../../../src/models", () => ({
   User: jest.fn().mockImplementation(() => ({

@@ -1,6 +1,6 @@
 const { StatusCodes } = require("http-status-codes");
-const AppError = require("../../src/error/AppError");
-const DBValidationError = require("../../src/error/DBValidationError");
+const AppError = require("@/error/AppError");
+const DBValidationError = require("@/error/DBValidationError");
 
 jest.mock("../../src/error/AppError");
 

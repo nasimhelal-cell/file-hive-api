@@ -1,4 +1,4 @@
-const AppError = require("../../src/error/AppError");
+const AppError = require("@/error/AppError");
 
 describe("AppError", () => {
   beforeAll(() =>

@@ -1,4 +1,4 @@
-const { generateToken } = require("../../../src/lib/auth");
+const { generateToken } = require("@/lib/auth");
 const jwt = require("jsonwebtoken");
 
 jest.mock("jsonwebtoken");

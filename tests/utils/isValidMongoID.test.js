@@ -1,4 +1,4 @@
-const isValidMongoID = require("../../src/utils/isValidMongoID");
+const isValidMongoID = require("@/utils/isValidMongoID");
 
 describe("isValidMongoID", () => {
   it("should return true for a valid mongoDb id ", () => {
@@ -7,8 +7,8 @@ describe("isValidMongoID", () => {
   });
 
   it("should return false for every falsy values ", () => {
-    const falsyvalues = [null, undefined, NaN, false, 0];
-    falsyvalues.forEach((value) => expect(isValidMongoID(value)).toBe(false));
+    const falsyValues = [null, undefined, NaN, false, 0];
+    falsyValues.forEach((value) => expect(isValidMongoID(value)).toBe(false));
   });
 
   it("should return false for invalid values ", () => {

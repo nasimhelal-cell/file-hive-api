@@ -1,5 +1,5 @@
-const { findUser } = require("../../../src/lib/user");
-const { User } = require("../../../src/models");
+const { findUser } = require("@/lib/user");
+const { User } = require("@/models");
 
 jest.mock("../../../src/models", () => ({
   User: {
