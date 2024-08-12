@@ -1,5 +1,5 @@
-const { findFolderByID } = require("../../../src/lib/folder");
-const { Folder } = require("../../../src/models");
+const { findFolderByID } = require("@/lib/folder");
+const { Folder } = require("@/models");
 
 jest.mock("../../../src/models", () => ({
   Folder: {
@@ -8,6 +8,10 @@ jest.mock("../../../src/models", () => ({
 }));
 
 describe("findFolderByID", () => {
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
   it("should return a folder obj when exist in database", async () => {
     let mockFolder = {
       _doc: { name: "mockFolderName", path: "mockPath" },
