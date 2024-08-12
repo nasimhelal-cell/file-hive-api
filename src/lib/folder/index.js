@@ -4,6 +4,7 @@ const findFolderByNameAndID = require("./findFolderByNameAndID");
 const findFolderByID = require("./findFolderByID");
 const generatePath = require("./generatePath");
 const generateUniqueFolderName = require("./generateUniqueFolderName");
+const findChildFoldersByID = require("./findChildFoldersByID");
 
 module.exports = {
   findFolderByName,
@@ -12,4 +13,5 @@ module.exports = {
   createFolder,
   generatePath,
   generateUniqueFolderName,
+  findChildFoldersByID,
 };

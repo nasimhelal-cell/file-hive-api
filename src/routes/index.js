@@ -16,7 +16,9 @@ router
   .route("/v1/folders/delete/:folderID")
   .delete(folderControllers.deleteFolder);
 router.route("/v1/folders/undo/:folderID").post(folderControllers.undo);
-router.route("/v1/folders/:folderID").post(folderControllers.getFolder);
+router
+  .route("/v1/folders/:folderID")
+  .get(authenticate, folderControllers.getFolder);
 
 // file
 router.route("/v1/files/upload").post(fileControllers.upload);
