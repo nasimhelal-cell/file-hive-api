@@ -2,29 +2,34 @@ const { StatusCodes } = require("http-status-codes");
 const { catchAsync } = require("@/utils");
 const {
   createFolder,
-  findFolderByNameAndID,
-  setPath,
-  setFolderName,
+  generatePath,
+  generateUniqueFolderName,
 } = require("@/lib/folder");
+const calculateNamePath = require("../utils");
 
 const create = catchAsync(async (req, res) => {
-  let { name, parentID, path } = req.body;
+  let { name, parentID } = req.body;
   const userID = req.user._id;
 
-  const existingFolder = await findFolderByNameAndID({ name, parentID });
-
   // set new name like newFolder 1/2/3/4
-  name = setFolderName({ existingFolderName: existingFolder?.name, name });
+  const uniqueName = await generateUniqueFolderName({ name, parentID });
 
   //set path for every folder
-  path = await setPath({ parentID });
+  const newPath = await generatePath({ parentID });
 
-  const folder = await createFolder({ name, parentID, path, userID });
+  let folder = await createFolder({
+    name: uniqueName,
+    path: newPath,
+    parentID,
+    userID,
+  });
+
+  const pathName = await calculateNamePath({ path: folder.path });
 
   const response = {
     code: StatusCodes.CREATED,
     message: "Folder Created successfully",
-    data: folder,
+    data: { ...folder._doc, pathName },
   };
 
   res.status(StatusCodes.CREATED).json(response);
