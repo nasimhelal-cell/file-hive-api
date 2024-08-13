@@ -1,5 +1,5 @@
-const findFIleByParentFolderID = require("./findFIleByParentFolderID");
+const getFilesByParentFolderID = require("./getFilesByParentFolderID");
 
 module.exports = {
-  findFIleByParentFolderID,
+  getFilesByParentFolderID,
 };

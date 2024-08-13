@@ -125,7 +125,7 @@ paths:
                 $ref: "#/components/schemas/inline_response_500"
       security:
         - BearerAuth: []
-  /v1/folders/update/{folderID}:
+  /v1/folders/rename/{folderID}:
     patch:
       tags:
         - Folder
@@ -265,6 +265,43 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/inline_response_200_5"
+        "404":
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/inline_response_404"
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/inline_response_500"
+      security:
+        - BearerAuth: []
+  /v1/folders/all/{folderID}:
+    get:
+      tags:
+        - Folder
+      description: Endpoint to retrive details of a specific folder
+      operationId: get-folders
+      parameters:
+        - name: folderID
+          in: path
+          description: folder-id (must have to valid in mongoose)
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
+            example: 66815a94e25007f4e4513097
+      responses:
+        "200":
+          description: Folder details retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/inline_response_200_10"
         "404":
           description: Not Found
           content:
@@ -876,6 +913,21 @@ components:
         annotations:
           type: string
           example: "/api/v1/annotations/{fileID}"
+    inline_response_200_10:
+      type: object
+      properties:
+        code:
+          type: number
+          example: 200
+        message:
+          type: string
+          example: Folders are retrieved successfully
+        data:
+          type: array
+          items:
+            allOf:
+              - $ref: "#/components/schemas/Folder"
+              - $ref: "#/components/schemas/ObjID"
   responses:
     "204":
       description: resourses delete successfully
