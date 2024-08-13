@@ -8,6 +8,7 @@ const findChildFoldersByID = require("./findChildFoldersByID");
 const renameFolder = require("./renameFolder");
 const rename = require("./rename");
 const getFolder = require("./getFolder");
+const create = require("./create");
 
 module.exports = {
   findFolderByName,
@@ -20,4 +21,5 @@ module.exports = {
   renameFolder,
   rename,
   getFolder,
+  create,
 };

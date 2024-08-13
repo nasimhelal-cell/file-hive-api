@@ -1,7 +1,7 @@
 const generateUniqueFolderName = require("./generateUniqueFolderName");
 const generatePath = require("./generatePath");
 const createFolder = require("./createFolder");
-const calculateNamePath = require("@/utils");
+const calculateNamePath = require("@/api/v1/folder/utils.js");
 
 const create = async ({ name, parentID, userID }) => {
   // set new name like newFolder 1/2/3/4
