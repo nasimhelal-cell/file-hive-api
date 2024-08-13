@@ -1,6 +1,6 @@
 const findFolderByID = require("./findFolderByID");
 
-const setPath = async ({ parentID }) => {
+const generatePath = async ({ parentID }) => {
   let path = ".";
   if (parentID) {
     let folderForPath = await findFolderByID({ ID: parentID });
@@ -10,4 +10,4 @@ const setPath = async ({ parentID }) => {
   return path;
 };
 
-module.exports = setPath;
+module.exports = generatePath;

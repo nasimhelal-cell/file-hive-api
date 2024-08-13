@@ -12,7 +12,6 @@ const folderSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "Folder",
     default: null,
-    // required: [true, "parentID is required"],
   },
   name: {
     type: String,

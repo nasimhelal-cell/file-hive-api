@@ -11,12 +11,19 @@ router.route("/v1/auth/logout").post(authenticate, authControllers.logout);
 
 // folder
 router.route("/v1/folders/create").post(authenticate, folderControllers.create);
-router.route("/v1/folders/update/:folderID").patch(folderControllers.update);
+router
+  .route("/v1/folders/rename/:folderID")
+  .patch(authenticate, folderControllers.rename);
 router
   .route("/v1/folders/delete/:folderID")
   .delete(folderControllers.deleteFolder);
 router.route("/v1/folders/undo/:folderID").post(folderControllers.undo);
-router.route("/v1/folders/:folderID").post(folderControllers.getFolder);
+router
+  .route("/v1/folders/:folderID")
+  .get(authenticate, folderControllers.getFolder);
+router
+  .route("/v1/folders/all/:folderID")
+  .get(authenticate, folderControllers.getFolders);
 
 // file
 router.route("/v1/files/upload").post(fileControllers.upload);

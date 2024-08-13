@@ -2,14 +2,22 @@ const createFolder = require("./createFolder");
 const findFolderByName = require("./findFolderByName");
 const findFolderByNameAndID = require("./findFolderByNameAndID");
 const findFolderByID = require("./findFolderByID");
-const setPath = require("./setPath");
-const setFolderName = require("./setFolderName");
+const generatePath = require("./generatePath");
+const generateUniqueFolderName = require("./generateUniqueFolderName");
+const findChildFoldersByID = require("./findChildFoldersByID");
+const renameFolder = require("./renameFolder");
+const rename = require("./rename");
+const getFolder = require("./getFolder");
 
 module.exports = {
   findFolderByName,
   findFolderByID,
   findFolderByNameAndID,
   createFolder,
-  setPath,
-  setFolderName,
+  generatePath,
+  generateUniqueFolderName,
+  findChildFoldersByID,
+  renameFolder,
+  rename,
+  getFolder,
 };
