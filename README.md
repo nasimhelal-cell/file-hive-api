@@ -18,7 +18,7 @@ The following documents outline the key requirements and design considerations f
 
 ### Documentation:
 - **Raff Documentation**: [Download here](https://drive.google.com/file/d/1eyfBELhgVwjplhQUZi3hOjf4y2lCLS9L/view?usp=drive_link)
-- **Swagger Documentation**: [View API documentation](https://app.swaggerhub.com/apis/NASIMHELAL123/FileHive/1.0.0)
+- **Swagger Documentation**: [View API documentation](https://app.swaggerhub.com/apis/NASIMHELAL123/FIleHive/1.0.0)
 
 ### Development:
 - **Database Schema and Design**: [Download here](https://drive.google.com/file/d/1_gbwNTvBKojJxUmO1Pl_bRtx3XQyzNYB/view?usp=sharing)
