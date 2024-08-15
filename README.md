@@ -9,6 +9,29 @@ This is a sophisticated file management app. You can easily upload, update, edit
 - Feature 2: Create, update, edit, delete folders and files. You can also create nested folders
 - Feature 3: One can place comments and annotations for a file
 
+## Project Requirements
+The following documents outline the key requirements and design considerations for FileHive:
+
+- **Project Requirements**: [Download here](https://drive.google.com/file/d/14Lj_C1NDF96JrByKIYZtshW6vBSWAgjt/view?usp=sharing)
+- **Developer-Friendly Requirements**: [Download here](https://drive.google.com/file/d/1FeB2pMxJv0hCSdt0nimtFtHBJDp-ZhRF/view?usp=sharing)
+
+## Documentation
+
+### API Documentation
+- **Swagger Documentation**: [View API documentation](https://app.swaggerhub.com/apis/NASIMHELAL123/FileHive/1.0.0)
+
+### Raff Documentation
+- **Raff Documentation**: [Download here](https://drive.google.com/file/d/1eyfBELhgVwjplhQUZi3hOjf4y2lCLS9L/view?usp=drive_link)
+
+## Development
+
+### Database Design
+- **Database Schema and Design**: [Download here](https://drive.google.com/file/d/1_gbwNTvBKojJxUmO1Pl_bRtx3XQyzNYB/view?usp=sharing)
+
+### API Folder Structure
+- **API Folder Structure**: [Download here](https://drive.google.com/file/d/1oThJn1DSl6_X49F4UgpEM5dIehuqxOKB/view?usp=sharing)
+
+
 ## Technologies Used
 - Node.js
 - Express.js
